@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilos.css">
+  <title>formularios</title>
+</head>
+<body>
+  <div class="conteiner">
+    <div class="titulo">Registro</div>
+      <form id ="form-validacion" novalidate>  
+         
+        <div class="form-group">
+            <samp>Nombre</samp>
+            <input type="text" placeholder="ingrese Nombre" required>
+            <small>Campo obligatorio</small>
+          </div>
+        
+
+        <div class="form-group">
+          <samp>Usuario</samp>
+          <input type="text" placeholder="ingrese Usuario" required>
+          <small>Campo obligatorio</small>
+        </div>
+
+        <div class="form-group">
+          <samp>Email</samp>
+          <input type="email" placeholder="ingrese Email" required>
+          <small>Campo obligatorio</small>
+        </div>
+
+        <div class="form-group">
+          <samp>Telefono</samp>
+          <input type="number" placeholder="ingrese Telefono" required>
+          <small>Campo obligatorio</small>
+        </div>
+
+        <div class="form-group">
+          <samp>Contraseña</samp>
+          <input type="password" placeholder="ingrese Contraseña" required>
+          <small>Campo obligatorio</small>
+        </div>
+
+        <div class="form-group">
+          <samp>Confirmar Contraseña</samp>
+          <input type="password" placeholder="ingrese Contraseña" required>
+          <small>Campo obligatorio</small>
+        </div>
+
+        <div class="button">
+          <input type="submit" value="Registrarse">
+        </div>
+
+
+    </form>
+  </div>
+
+  <script>
+    const agregarformulario = document.getElementById("form-validacion");
+    agregarformulario.addEventListener("submit", (e) => {
+      if(agregarformulario.checkValidity() === false){
+        e.preventDefault;
+        e.stopPropagation;
+        agregarformulario.classList.add("was-validate");
+        return false;
+      }
+    })
+  </script>
+  
+</body>
+</html>
